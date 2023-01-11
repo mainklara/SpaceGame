@@ -19,15 +19,13 @@ screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("IT Quizgame Alpha")
 
 # Hintergrundbild festlegen
-#background = pygame.image.load(os.path.join('Assets', 'backgroundquiz.jpg'))
-#for element in range(1, 120, 1):
+# background = pygame.image.load(os.path.join('Assets', 'backgroundquiz.jpg'))
+# for element in range(1, 120, 1):
 frame = 0
 background1 = pygame.image.load(os.path.join('/Users/klaramueller/PycharmProjects/pythonProject/animatedstars1.png'))
 background2 = pygame.image.load(os.path.join('/Users/klaramueller/PycharmProjects/pythonProject/animatedstars2.png'))
 background1 = pygame.transform.scale(background1, (798, 499))
 background2= pygame.transform.scale(background2, (798, 499))
-
-
 
 # Größe der Planeten festlegen
 planet1_width, planet1_height = 666, 500
@@ -64,9 +62,7 @@ richtung_d = pygame.transform.rotate(pygame.transform.scale(cursor, (cursor_widt
 richtung_e = pygame.transform.rotate(pygame.transform.scale(cursor, (cursor_width, cursor_height)), 45)
 
 # Keine Ahnung das muss anscheinend so
-cursorposition =  pygame.Rect(100, 300, cursor_width, cursor_height)
-
-
+cursorposition = pygame.Rect(100, 300, cursor_width, cursor_height)
 
 # Schleife für das Programm
 run = True
@@ -94,7 +90,6 @@ while run:
 
     frame += 1
 
-
     if frame < 60:
         background = background1
     if frame >= 60:
@@ -103,7 +98,6 @@ while run:
         frame = 0
 
     screen.blit(background, (0, 0))
-
 
     # Position der Planeten festlegen
     screen.blit(planet1, (0, 0))
@@ -117,10 +111,5 @@ while run:
     # Bildschirm dauerhaft aktualisieren und FPS festgelegt
     pygame.display.flip()
     fps.tick(60)
-
-
-
-
-
 
 pygame.quit()
